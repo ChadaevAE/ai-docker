@@ -3,13 +3,13 @@ version: '3.8'
 services:
   app:
     build:
-      context: laravel
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: DockerfileLaravel
     container_name: laravel
     ports:
       - "8000:8000"
     volumes:
-      - ./laravel:/app
+      - .:/app
     depends_on:
       db:
         condition: service_healthy
